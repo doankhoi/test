@@ -18,6 +18,7 @@ class BatDongSanSpider(CrawlSpider):
     ]
 
     rules = (
+        Rule(LinkExtractor(allow=(r'.*nha\-dat\-ban\/p\d+$', )), follow=True),
         Rule(LinkExtractor(allow=(r'.*\-pr\d+$', )), callback='parse_item', follow=True),
     )
 
